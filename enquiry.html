@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Infotech - Enquiry Form</title>
+
+    <link rel="stylesheet" href="css/enquiry.css">
+
+</head>
+
+
+<body>
+
+
+    <header class="header">
+
+        <div class="container">
+
+            <div class="logo-container">
+
+                <img src="img/career_Infotech_logo.png" alt="Career Infotech Ghansoli" class="logo">
+
+            </div>
+
+            <h1>CAREER INFOTECH</h1>
+
+            <p>IT Training Institute</p>
+
+        </div>
+        <!-- =========================
+         NAVBAR
+    ========================== -->
+
+        <nav class="navbar">
+
+            <div class="nav-container">
+
+
+                <!-- LOGO / BRAND -->
+
+                <div class="nav-brand">
+
+                    <span>
+                        CAREER INFOTECH
+                    </span>
+
+                </div>
+
+
+
+                <!-- MOBILE MENU BUTTON -->
+
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation">
+
+                    ☰
+
+                </button>
+
+
+
+                <!-- NAVIGATION -->
+
+                <ul class="nav-menu" id="navMenu">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="enquiry.html">
+                            Inquiry
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://tureraomilind358.github.io/Fee-Collection-System-Manage/login.html">
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html" class="nav-register">
+
+                            Register Now
+
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+        <div class="container">
+
+            <div class="form-card">
+
+
+                <div class="form-title">
+
+                    <h2>Student Enquiry Form</h2>
+
+                    <p>
+                        Start your IT career with the right skills.
+                    </p>
+
+                </div>
+
+
+
+                <form id="enquiryForm">
+
+
+                    <!-- STUDENT NAME -->
+
+                    <div class="form-group">
+
+                        <label for="studentName">
+                            Student Name *
+                        </label>
+
+                        <input type="text" id="studentName" placeholder="Enter student name" required>
+
+                    </div>
+
+
+
+                    <!-- MOBILE -->
+
+                    <div class="form-group">
+
+                        <label for="mobile">
+                            Mobile Number *
+                        </label>
+
+                        <input type="tel" id="mobile" maxlength="10" placeholder="Enter 10 digit mobile number"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- WHATSAPP -->
+
+                    <div class="form-group">
+
+                        <label for="whatsapp">
+                            WhatsApp Number
+                        </label>
+
+                        <input type="tel" id="whatsapp" maxlength="10" placeholder="Enter WhatsApp number">
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input type="email" id="email" placeholder="Enter email address">
+
+                    </div>
+
+
+
+                    <!-- QUALIFICATION -->
+
+                    <div class="form-group">
+
+                        <label for="qualification">
+                            Qualification *
+                        </label>
+
+                        <select id="qualification" required>
+
+                            <option value="">
+                                Select Qualification
+                            </option>
+
+                            <option>10th</option>
+                            <option>12th</option>
+                            <option>Diploma</option>
+                            <option>BCA</option>
+                            <option>B.Sc</option>
+                            <option>B.E / B.Tech</option>
+                            <option>B.Com</option>
+                            <option>BBA</option>
+                            <option>MCA</option>
+                            <option>M.Sc</option>
+                            <option>MBA</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- COURSE -->
+
+                    <div class="form-group">
+
+                        <label for="course">
+                            Course Interested *
+                        </label>
+
+                        <select id="course" required>
+
+                            <option value="">
+                                Select Course
+                            </option>
+
+                            <option>AI / ML</option>
+
+                            <option>GenAI & Agentic AI</option>
+
+                            <option>MLOps / DevOps</option>
+
+                            <option>Data Science</option>
+
+                            <option>Data Analytics</option>
+
+                            <option>Full Stack Development</option>
+
+                            <option>MERN Stack</option>
+
+                            <option>MEAN Stack</option>
+
+                            <option>Frontend Development</option>
+
+                            <option>Backend Development</option>
+
+                            <option>Java Development</option>
+
+                            <option>Python Development</option>
+
+                            <option>Web Development</option>
+
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- BATCH -->
+
+                    <div class="form-group">
+
+                        <label for="batch">
+                            Preferred Batch *
+                        </label>
+
+                        <select id="batch" required>
+
+                            <option value="">
+                                Select Batch
+                            </option>
+
+                            <option>
+                                Morning - 9:00 AM
+                            </option>
+
+                            <option>
+                                Morning - 10:00 AM
+                            </option>
+
+                            <option>
+                                Morning - 11:00 AM
+                            </option>
+
+                            <option>
+                                Afternoon - 12:00 PM
+                            </option>
+
+                            <option>
+                                Afternoon - 2:00 PM
+                            </option>
+
+                            <option>
+                                Afternoon - 3:00 PM
+                            </option>
+
+                            <option>
+                                Evening - 5:00 PM
+                            </option>
+
+                            <option>
+                                Evening - 6:00 PM
+                            </option>
+
+                            <option>
+                                Evening - 7:00 PM
+                            </option>
+
+                            <option>
+                                Evening - 8:00 PM
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- CAREER GOAL -->
+
+                    <div class="form-group">
+
+                        <label for="careerGoal">
+                            Career Goal *
+                        </label>
+
+                        <select id="careerGoal" required>
+
+                            <option value="">
+                                Select Career Goal
+                            </option>
+
+                            <option>
+                                Get IT Job
+                            </option>
+
+                            <option>
+                                Career Change
+                            </option>
+
+                            <option>
+                                Improve IT Skills
+                            </option>
+
+                            <option>
+                                Become Software Developer
+                            </option>
+
+                            <option>
+                                Become Data Analyst
+                            </option>
+
+                            <option>
+                                Become Data Scientist
+                            </option>
+
+                            <option>
+                                Become AI/ML Engineer
+                            </option>
+
+                            <option>
+                                Internship
+                            </option>
+
+                            <option>
+                                Freelancing
+                            </option>
+
+                            <option>
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- SOURCE -->
+
+                    <div class="form-group">
+
+                        <label for="source">
+                            Enquiry Source *
+                        </label>
+
+                        <select id="source" required>
+
+                            <option value="">
+                                How did you hear about us?
+                            </option>
+
+                            <option>Google</option>
+
+                            <option>Instagram</option>
+
+                            <option>Facebook</option>
+
+                            <option>WhatsApp</option>
+
+                            <option>YouTube</option>
+
+                            <option>Google Maps</option>
+
+                            <option>Friend / Student Reference</option>
+
+                            <option>Walk-in</option>
+
+                            <option>College</option>
+
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea id="message" rows="4" placeholder="Enter your enquiry or message"></textarea>
+
+                    </div>
+
+
+
+                    <button type="submit" id="submitBtn">
+
+                        Submit Enquiry
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- SUCCESS -->
+
+                <div id="successMessage" class="success-message">
+
+                    <div class="success-icon">
+                        ✓
+                    </div>
+
+                    <h2>
+                        Enquiry Submitted!
+                    </h2>
+
+                    <p>
+                        Thank you for contacting Career Infotech.
+                    </p>
+
+                    <div class="registration-id">
+
+                        Enquiry ID:
+
+                        <strong id="enquiryId"></strong>
+
+                    </div>
+
+                    <p>
+                        Our team will contact you shortly.
+                    </p>
+
+                    <button onclick="newEnquiry()" class="new-enquiry">
+
+                        Submit Another Enquiry
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <footer>
+
+        <div class="container">
+
+            <h3>CAREER INFOTECH</h3>
+
+            <p>
+                Industry-Oriented Offline IT Training
+            </p>
+
+            <p>
+                Ghansoli, Navi Mumbai
+            </p>
+
+            <p>
+                📞 +91 95295 37044 |
+                +91 79775 93825
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="js/enquiry.js"></script>
+
+</body>
+
+</html>

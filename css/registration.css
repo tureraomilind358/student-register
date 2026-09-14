@@ -41,15 +41,15 @@ body {
 ========================= */
 
 .header {
+    background: linear-gradient(
+        135deg,
+        #073b8f,
+        #1976d2
+    );
 
-    background: #1f7a63;
-
-    color: white;
-
+    color: #fff;
     text-align: center;
-
-    padding: 25px 0;
-
+    padding: 25px 0 30px;
 }
 
 
@@ -394,14 +394,15 @@ main {
 
 footer {
 
-    background: #17202a;
+    background: #102a43;
 
-    color: white;
+    color: #fff;
 
     text-align: center;
 
-    padding: 30px 0;
+    padding: 25px 15px;
 
+    margin-top: 10px;
 }
 
 
@@ -420,6 +421,285 @@ footer p {
 
     font-size: 14px;
 
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.06);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.nav-container {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+
+    min-height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* ========================================
+   NAV BRAND
+======================================== */
+
+.nav-brand {
+
+    color: #073b8f;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ========================================
+   NAV MENU
+======================================== */
+
+.nav-menu {
+
+    list-style: none;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.nav-menu li {
+    display: block;
+}
+
+
+.nav-menu a {
+
+    display: block;
+
+    text-decoration: none;
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding: 10px 14px;
+
+    border-radius: 7px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.nav-menu a:hover {
+
+    color: #1976d2;
+
+    background: #f1f6ff;
+}
+
+
+/* ========================================
+   REGISTER BUTTON
+======================================== */
+
+.nav-menu .nav-register {
+
+    background: #073b8f;
+
+    color: #ffffff;
+
+    margin-left: 5px;
+}
+
+
+.nav-menu .nav-register:hover {
+
+    background: #1976d2;
+
+    color: #ffffff;
+}
+
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.menu-toggle {
+
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: #073b8f;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    padding: 5px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+    .nav-container {
+
+        min-height: 58px;
+
+        padding: 0 16px;
+    }
+
+
+    .nav-brand {
+
+        font-size: 16px;
+    }
+
+
+    .menu-toggle {
+
+        display: block;
+    }
+
+
+    .nav-menu {
+
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        background: #ffffff;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 10px 16px 15px;
+
+        border-top: 1px solid #eeeeee;
+
+        box-shadow:
+            0 8px 20px rgba(
+                0,
+                0,
+                0,
+                0.08
+            );
+    }
+
+
+    .nav-menu.active {
+
+        display: flex;
+    }
+
+
+    .nav-menu li {
+
+        width: 100%;
+    }
+
+
+    .nav-menu a {
+
+        width: 100%;
+
+        padding: 13px 12px;
+
+        border-radius: 6px;
+    }
+
+
+    .nav-menu .nav-register {
+
+        margin-left: 0;
+
+        margin-top: 5px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .nav-container {
+
+        padding: 0 12px;
+    }
+
+
+    .nav-brand {
+
+        font-size: 15px;
+    }
+
+
+    .menu-toggle {
+
+        font-size: 26px;
+    }
+    
 }
 
 

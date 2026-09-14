@@ -27,27 +27,98 @@
 
     <header class="header">
 
-    <div class="container">
+        <div class="container">
 
-        <!-- Career Infotech Logo -->
-        <div class="logo-container">
-            <img
-                src="img/career_Infotech_logo.png"
-                alt="Career Infotech Ghansoli Logo"
-                class="logo">
+            <!-- Career Infotech Logo -->
+
+            <div class="logo-container">
+
+                <img
+                    src="img/career_Infotech_logo.png"
+                    alt="Career Infotech Ghansoli Logo"
+                    class="logo">
+
+            </div>
+
         </div>
 
-        <h1>
-            CAREER INFOTECH
-        </h1>
-
-        <p>
-            IT Training Institute
-        </p>
-
-    </div>
-
     </header>
+
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- LOGO / BRAND -->
+
+            <div class="nav-brand">
+
+                <span>
+                    CAREER INFOTECH
+                </span>
+
+            </div>
+
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Toggle navigation">
+
+                ☰
+
+            </button>
+
+
+
+            <!-- NAVIGATION -->
+
+            <ul
+                class="nav-menu"
+                id="navMenu">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="enquiry.html">
+                        Inquiry
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://tureraomilind358.github.io/Fee-Collection-System-Manage/login.html">
+                        Login
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="index.html"
+                        class="nav-register">
+
+                        Register Now
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
 
 
 
@@ -55,7 +126,7 @@
          REGISTRATION
     ========================== -->
 
-    <main>
+    <main id="registration">
 
         <div class="container">
 
@@ -308,7 +379,52 @@
 
 
 
+    <!-- JAVASCRIPT -->
+
     <script src="js/registration.js"></script>
+
+
+    <!-- NAVBAR JAVASCRIPT -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navMenu =
+            document.getElementById("navMenu");
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navMenu.classList.toggle("active");
+
+            }
+        );
+
+
+        // Close mobile menu after clicking link
+
+        document
+            .querySelectorAll(".nav-menu a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navMenu.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+            });
+
+    </script>
 
 </body>
 

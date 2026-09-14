@@ -6,7 +6,7 @@
 
 
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbz5YikkHzPW_CfPjHYB_xu6xTH2cTHVg6LystLD8BI1a_7FNpig2H-my_4xEvtKvcnb/exec";
+  "hhttps://script.google.com/macros/s/AKfycbzwIgviwsZ4DXBbNjzEqdQ_7EUln8j2yyZ6WwMkcqEdlUEtCy96Sn9zof61Ox_f9XdY/exec";
 
 
 const form =
