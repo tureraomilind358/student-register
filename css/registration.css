@@ -1,0 +1,460 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7f9;
+
+    color: #222;
+
+}
+
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+
+    width: 92%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+    background: #1f7a63;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px 0;
+
+}
+
+
+.header h1 {
+
+    font-size: 28px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.header p {
+
+    font-size: 14px;
+
+    opacity: 0.9;
+
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+
+    min-height: 75vh;
+
+    padding: 50px 0;
+
+}
+
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.form-card {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.08);
+
+}
+
+
+
+/* =========================
+   TITLE
+========================= */
+
+.form-title {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.form-title h2 {
+
+    color: #1f7a63;
+
+    font-size: 28px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.form-title p {
+
+    color: #777;
+
+    font-size: 14px;
+
+}
+
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+
+/* =========================
+   INPUT
+========================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d5dadd;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    background: white;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: #1f7a63;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(31, 122, 99, 0.1);
+
+}
+
+
+.form-group textarea {
+
+    resize: vertical;
+
+}
+
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+#submitBtn {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #1f7a63;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+#submitBtn:hover {
+
+    background: #17634f;
+
+}
+
+
+#submitBtn:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+
+
+/* =========================
+   SUCCESS
+========================= */
+
+.success-message {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 20px 0;
+
+}
+
+
+.success-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: auto;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #dff5ed;
+
+    color: #1f7a63;
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+}
+
+
+.success-message h2 {
+
+    color: #1f7a63;
+
+    margin-bottom: 10px;
+
+}
+
+
+.success-message p {
+
+    color: #666;
+
+    margin-bottom: 15px;
+
+}
+
+
+.registration-id {
+
+    background: #f1f7f5;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    margin: 15px 0;
+
+}
+
+
+.registration-id strong {
+
+    color: #1f7a63;
+
+}
+
+
+
+/* =========================
+   NEW REGISTRATION
+========================= */
+
+.new-registration {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #1f7a63;
+
+    border-radius: 7px;
+
+    background: white;
+
+    color: #1f7a63;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background: #17202a;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 0;
+
+}
+
+
+footer h3 {
+
+    margin-bottom: 8px;
+
+}
+
+
+footer p {
+
+    color: #c7ced5;
+
+    margin: 5px 0;
+
+    font-size: 14px;
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    main {
+
+        padding: 30px 0;
+
+    }
+
+
+    .form-card {
+
+        padding: 25px 20px;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    .form-title h2 {
+
+        font-size: 24px;
+
+    }
+
+}

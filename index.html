@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Career Infotech - Registration
+    </title>
+
+    <link rel="stylesheet"
+          href="css/registration.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+    <div class="container">
+
+        <!-- Career Infotech Logo -->
+        <div class="logo-container">
+            <img
+                src="img/career_Infotech_logo.png"
+                alt="Career Infotech Ghansoli Logo"
+                class="logo">
+        </div>
+
+        <h1>
+            CAREER INFOTECH
+        </h1>
+
+        <p>
+            IT Training Institute
+        </p>
+
+    </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         REGISTRATION
+    ========================== -->
+
+    <main>
+
+        <div class="container">
+
+
+            <div class="form-card">
+
+
+                <div class="form-title">
+
+                    <h2>
+                        Student Registration
+                    </h2>
+
+                    <p>
+                        Please fill in your details
+                    </p>
+
+                </div>
+
+
+
+                <!-- FORM -->
+
+                <form id="registrationForm">
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- MOBILE -->
+
+                    <div class="form-group">
+
+                        <label for="mobile">
+                            Mobile Number *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="mobile"
+                            placeholder="Enter 10 digit mobile number"
+                            maxlength="10"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- EDUCATION -->
+
+                    <div class="form-group">
+
+                        <label for="education">
+                            Education *
+                        </label>
+
+                        <select
+                            id="education"
+                            required>
+
+                            <option value="">
+                                Select Education
+                            </option>
+
+                            <option value="10th">
+                                10th
+                            </option>
+
+                            <option value="12th">
+                                12th
+                            </option>
+
+                            <option value="Diploma">
+                                Diploma
+                            </option>
+
+                            <option value="BCA">
+                                BCA
+                            </option>
+
+                            <option value="B.Sc">
+                                B.Sc
+                            </option>
+
+                            <option value="B.E / B.Tech">
+                                B.E / B.Tech
+                            </option>
+
+                            <option value="B.Com">
+                                B.Com
+                            </option>
+
+                            <option value="BBA">
+                                BBA
+                            </option>
+
+                            <option value="MCA">
+                                MCA
+                            </option>
+
+                            <option value="M.Sc">
+                                M.Sc
+                            </option>
+
+                            <option value="MBA">
+                                MBA
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="form-group">
+
+                        <label for="address">
+                            Address *
+                        </label>
+
+                        <textarea
+                            id="address"
+                            rows="4"
+                            placeholder="Enter your address"
+                            required></textarea>
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        id="submitBtn">
+
+                        Register Now
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- =========================
+                     SUCCESS MESSAGE
+                ========================== -->
+
+                <div
+                    id="successMessage"
+                    class="success-message">
+
+
+                    <div class="success-icon">
+                        ✓
+                    </div>
+
+
+                    <h2>
+                        Registration Successful!
+                    </h2>
+
+
+                    <p>
+                        Thank you for registering
+                        with Career Infotech.
+                    </p>
+
+
+                    <div class="registration-id">
+
+                        Registration ID:
+
+                        <strong id="registrationId">
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        onclick="newRegistration()"
+                        class="new-registration">
+
+                        New Registration
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <h3>
+                CAREER INFOTECH
+            </h3>
+
+            <p>
+                Industry-Oriented Offline IT Training
+            </p>
+
+            <p>
+                Ghansoli, Navi Mumbai
+            </p>
+
+            <p>
+                📞 +91 95295 37044 |
+                +91 79775 93825
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="js/registration.js"></script>
+
+</body>
+
+</html>
