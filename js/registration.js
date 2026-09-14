@@ -35,10 +35,7 @@ form.addEventListener("submit", function (event) {
 
   event.preventDefault();
 
-  console.log("======================================");
-  console.log("🚀 STUDENT REGISTRATION STARTED");
-  console.log("======================================");
-
+ 
 
   // ----------------------------------------------------
   // GET FORM VALUES
@@ -69,19 +66,6 @@ form.addEventListener("submit", function (event) {
   // PRINT FORM DATA
   // ====================================================
 
-  console.log("📌 Form Data:");
-  console.log({
-    name: name,
-    mobile: mobile,
-    education: education,
-    address: address
-  });
-
-
-  console.log("Name:", name);
-  console.log("Mobile:", mobile);
-  console.log("Education:", education);
-  console.log("Address:", address);
 
 
   // ====================================================
@@ -116,7 +100,7 @@ form.addEventListener("submit", function (event) {
   }
 
 
-  console.log("✅ Frontend validation successful");
+  
 
 
   // ====================================================
@@ -134,25 +118,11 @@ form.addEventListener("submit", function (event) {
   const callbackName =
     "registrationCallback_" + Date.now();
 
-
-  console.log("📞 Callback Name:", callbackName);
-
-
   // ====================================================
   // CREATE JSONP CALLBACK
   // ====================================================
 
   window[callbackName] = function (response) {
-
-    console.log("======================================");
-    console.log("📥 GOOGLE APPS SCRIPT RESPONSE");
-    console.log("======================================");
-
-    console.log("Response:", response);
-    console.log("Status:", response ? response.status : null);
-    console.log("Message:", response ? response.message : null);
-    console.log("Data:", response ? response.data : null);
-
 
     // --------------------------------------------------
     // REMOVE SCRIPT
@@ -174,7 +144,6 @@ form.addEventListener("submit", function (event) {
       response.status === "success"
     ) {
 
-      console.log("✅ Registration successful");
 
       form.style.display = "none";
 
@@ -200,19 +169,10 @@ form.addEventListener("submit", function (event) {
         response.data.registrationId
       ) {
 
-        console.log(
-          "🆔 Registration ID:",
-          response.data.registrationId
-        );
-
         registrationId.innerText =
           response.data.registrationId;
 
       } else {
-
-        console.warn(
-          "⚠️ Registration successful but Registration ID not found."
-        );
 
         registrationId.innerText =
           "Registration Successful";
@@ -221,11 +181,6 @@ form.addEventListener("submit", function (event) {
 
 
     } else {
-
-      console.error(
-        "❌ Registration failed:",
-        response
-      );
 
       alert(
         response && response.message
@@ -292,9 +247,6 @@ form.addEventListener("submit", function (event) {
 
   script.onerror = function () {
 
-    console.error(
-      "❌ Google Apps Script connection failed."
-    );
 
     console.error(
       "Failed URL:",
@@ -321,11 +273,7 @@ form.addEventListener("submit", function (event) {
   // SEND REQUEST
   // ====================================================
 
-  console.log("🚀 Sending request now...");
-
   document.body.appendChild(script);
-
-  console.log("✅ JSONP script added to page.");
 
 });
 
@@ -335,8 +283,6 @@ form.addEventListener("submit", function (event) {
 // ======================================================
 
 function newRegistration() {
-
-  console.log("🔄 Starting new registration");
 
   form.reset();
 
