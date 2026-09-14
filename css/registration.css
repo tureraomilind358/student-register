@@ -738,3 +738,184 @@ footer p {
     }
 
 }
+
+
+
+/* =========================
+   SUCCESS POPUP
+========================= */
+
+.success-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 99999;
+
+    padding: 20px;
+}
+
+
+.success-popup-box {
+    width: 100%;
+    max-width: 450px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 35px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3);
+
+    animation:
+        popupShow 0.3s ease;
+}
+
+
+@keyframes popupShow {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+.success-popup-icon {
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #198754;
+
+    color: white;
+
+    font-size: 42px;
+
+    line-height: 70px;
+
+    font-weight: bold;
+
+}
+
+
+.success-popup-box h2 {
+
+    margin: 0 0 10px;
+
+    color: #198754;
+
+    font-size: 24px;
+
+}
+
+
+.success-popup-box p {
+
+    color: #555;
+
+    margin: 8px 0;
+
+}
+
+
+.enquiry-number {
+
+    margin: 20px 0;
+
+    padding: 15px;
+
+    background: #f1f8f5;
+
+    border-radius: 10px;
+
+    border: 1px solid #d5eadf;
+
+}
+
+
+.enquiry-number span {
+
+    display: block;
+
+    font-size: 13px;
+
+    color: #666;
+
+    margin-bottom: 5px;
+
+}
+
+
+.enquiry-number strong {
+
+    display: block;
+
+    font-size: 20px;
+
+    color: #198754;
+
+    letter-spacing: 1px;
+
+}
+
+
+.success-popup-text {
+
+    font-size: 14px;
+
+}
+
+
+.success-popup-button {
+
+    margin-top: 15px;
+
+    width: 100%;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #198754;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.success-popup-button:hover {
+
+    background: #146c43;
+
+}

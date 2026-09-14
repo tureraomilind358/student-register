@@ -1,303 +1,351 @@
-const API_BASE =
-    'https://script.google.com/macros/s/AKfycbyHqgeLsqYkqLmi0mzovE1_lFiUjlH0yDOpqmnYoaXDJthLXY1fkgyqucDQiIcUiPgw/exec';
+// ======================================================
+// CAREER INFOTECH
+// STUDENT REGISTRATION
+// GOOGLE SHEET JSONP
+// ======================================================
+
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbyHqgeLsqYkqLmi0mzovE1_lFiUjlH0yDOpqmnYoaXDJthLXY1fkgyqucDQiIcUiPgw/exec";
 
 
-const form =
-    document.getElementById('enquiryForm');
+// ======================================================
+// GET ELEMENTS
+// ======================================================
 
-const submitBtn =
-    document.getElementById('submitBtn');
-
-const successMessage =
-    document.getElementById('successMessage');
-
-
-/* =========================
-   JSONP API
-========================= */
-
-function callAPI(params) {
-
-    return new Promise(function(resolve, reject) {
-
-        const callbackName =
-            'callback_' + Date.now();
-
-        params.callback = callbackName;
-
-        const query =
-            new URLSearchParams(params).toString();
-
-        const script =
-            document.createElement('script');
-
-        const timeout =
-            setTimeout(function() {
-
-                cleanup();
-
-                reject(
-                    new Error(
-                        'Server request timed out'
-                    )
-                );
-
-            }, 20000);
+const form = document.getElementById("registrationForm");
+const submitBtn = document.getElementById("submitBtn");
+const successMessage = document.getElementById("successMessage");
+const registrationId = document.getElementById("registrationId");
 
 
-        window[callbackName] =
-            function(response) {
+// ======================================================
+// CHECK FORM
+// ======================================================
 
-                cleanup();
-
-                resolve(response);
-
-            };
-
-
-        script.src =
-            API_BASE + '?' + query;
-
-
-        script.onerror =
-            function() {
-
-                cleanup();
-
-                reject(
-                    new Error(
-                        'Unable to connect to Google Apps Script'
-                    )
-                );
-
-            };
-
-
-        document.body.appendChild(script);
-
-
-        function cleanup() {
-
-            clearTimeout(timeout);
-
-            delete window[callbackName];
-
-            if (script.parentNode) {
-                script.parentNode.removeChild(script);
-            }
-
-        }
-
-    });
-
+if (!form) {
+  console.error("❌ registrationForm not found.");
 }
 
 
-/* =========================
-   FORM SUBMIT
-========================= */
+// ======================================================
+// FORM SUBMIT
+// ======================================================
 
-form.addEventListener(
-    'submit',
-    async function(event) {
+form.addEventListener("submit", function (event) {
 
-        event.preventDefault();
+  event.preventDefault();
 
+  console.log("======================================");
+  console.log("🚀 STUDENT REGISTRATION STARTED");
+  console.log("======================================");
 
-        const name =
-            document.getElementById(
-                'studentName'
-            ).value.trim();
 
+  // ----------------------------------------------------
+  // GET FORM VALUES
+  // ----------------------------------------------------
 
-        const mobile =
-            document.getElementById(
-                'mobile'
-            ).value.trim();
+  const name = document
+    .getElementById("name")
+    .value
+    .trim();
 
+  const mobile = document
+    .getElementById("mobile")
+    .value
+    .trim();
 
-        const whatsapp =
-            document.getElementById(
-                'whatsapp'
-            ).value.trim();
+  const education = document
+    .getElementById("education")
+    .value
+    .trim();
 
+  const address = document
+    .getElementById("address")
+    .value
+    .trim();
 
-        const email =
-            document.getElementById(
-                'email'
-            ).value.trim();
 
+  // ====================================================
+  // PRINT FORM DATA
+  // ====================================================
 
-        const qualification =
-            document.getElementById(
-                'qualification'
-            ).value;
+  console.log("📌 Form Data:");
+  console.log({
+    name: name,
+    mobile: mobile,
+    education: education,
+    address: address
+  });
 
 
-        const course =
-            document.getElementById(
-                'course'
-            ).value;
+  console.log("Name:", name);
+  console.log("Mobile:", mobile);
+  console.log("Education:", education);
+  console.log("Address:", address);
 
 
-        const batch =
-            document.getElementById(
-                'batch'
-            ).value;
+  // ====================================================
+  // VALIDATION
+  // ====================================================
 
+  if (name.length < 2) {
+    console.error("❌ Invalid name:", name);
+    alert("Please enter your name.");
+    return;
+  }
 
-        const careerGoal =
-            document.getElementById(
-                'careerGoal'
-            ).value;
 
+  if (!/^[6-9]\d{9}$/.test(mobile)) {
+    console.error("❌ Invalid mobile:", mobile);
+    alert("Please enter a valid 10 digit mobile number.");
+    return;
+  }
 
-        const source =
-            document.getElementById(
-                'source'
-            ).value;
 
+  if (!education) {
+    console.error("❌ Education is empty");
+    alert("Please select your education.");
+    return;
+  }
 
-        const message =
-            document.getElementById(
-                'message'
-            ).value.trim();
 
+  if (address.length < 5) {
+    console.error("❌ Invalid address:", address);
+    alert("Please enter your address.");
+    return;
+  }
 
-        /* =========================
-           MOBILE VALIDATION
-        ========================= */
 
-        if (!/^[6-9]\d{9}$/.test(mobile)) {
+  console.log("✅ Frontend validation successful");
 
-            alert(
-                'Please enter a valid 10-digit mobile number.'
-            );
 
-            return;
+  // ====================================================
+  // LOADING
+  // ====================================================
 
-        }
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Registering...";
 
 
-        if (
-            whatsapp &&
-            !/^[6-9]\d{9}$/.test(whatsapp)
-        ) {
+  // ====================================================
+  // CREATE CALLBACK
+  // ====================================================
 
-            alert(
-                'Please enter a valid WhatsApp number.'
-            );
+  const callbackName =
+    "registrationCallback_" + Date.now();
 
-            return;
 
-        }
+  console.log("📞 Callback Name:", callbackName);
 
 
-        /* =========================
-           BUTTON
-        ========================= */
+  // ====================================================
+  // CREATE JSONP CALLBACK
+  // ====================================================
 
-        submitBtn.disabled = true;
+  window[callbackName] = function (response) {
 
-        submitBtn.textContent =
-            'Submitting...';
+    console.log("======================================");
+    console.log("📥 GOOGLE APPS SCRIPT RESPONSE");
+    console.log("======================================");
 
+    console.log("Response:", response);
+    console.log("Status:", response ? response.status : null);
+    console.log("Message:", response ? response.message : null);
+    console.log("Data:", response ? response.data : null);
 
-        try {
 
-            const response =
-                await callAPI({
+    // --------------------------------------------------
+    // REMOVE SCRIPT
+    // --------------------------------------------------
 
-                    action: 'registerEnquiry',
+    const script = document.getElementById(callbackName);
 
-                    Student_Name: name,
+    if (script) {
+      script.remove();
+    }
 
-                    Mobile_Number: mobile,
 
-                    WhatsApp_Number: whatsapp,
+    // --------------------------------------------------
+    // SUCCESS
+    // --------------------------------------------------
 
-                    Email: email,
+    if (
+      response &&
+      response.status === "success"
+    ) {
 
-                    Qualification: qualification,
+      console.log("✅ Registration successful");
 
-                    Course_Interested: course,
+      form.style.display = "none";
 
-                    Preferred_Batch: batch,
+      successMessage.style.display = "block";
 
-                    Career_Goal: careerGoal,
 
-                    Enquiry_Source: source,
+      // Support both response formats
+      if (
+        response.data &&
+        response.data.Registration_ID
+      ) {
 
-                    Message: message
+        console.log(
+          "🆔 Registration ID:",
+          response.data.Registration_ID
+        );
 
-                });
+        registrationId.innerText =
+          response.data.Registration_ID;
 
+      } else if (
+        response.data &&
+        response.data.registrationId
+      ) {
 
-            if (
-                response &&
-                response.status === 'success'
-            ) {
+        console.log(
+          "🆔 Registration ID:",
+          response.data.registrationId
+        );
 
-                document.getElementById(
-                    'enquiryId'
-                ).textContent =
-                    response.data.enquiryId;
+        registrationId.innerText =
+          response.data.registrationId;
 
+      } else {
 
-                form.style.display =
-                    'none';
+        console.warn(
+          "⚠️ Registration successful but Registration ID not found."
+        );
 
+        registrationId.innerText =
+          "Registration Successful";
 
-                successMessage.style.display =
-                    'block';
+      }
 
-            }
 
-            else {
+    } else {
 
-                alert(
-                    response.message ||
-                    'Unable to submit enquiry.'
-                );
+      console.error(
+        "❌ Registration failed:",
+        response
+      );
 
-            }
-
-
-        }
-
-        catch (error) {
-
-            alert(
-                'Something went wrong. Please try again.'
-            );
-
-        }
-
-        finally {
-
-            submitBtn.disabled = false;
-
-            submitBtn.textContent =
-                'Submit Enquiry';
-
-        }
+      alert(
+        response && response.message
+          ? response.message
+          : "Registration failed."
+      );
 
     }
-);
 
 
-/* =========================
-   NEW ENQUIRY
-========================= */
+    // --------------------------------------------------
+    // RESET BUTTON
+    // --------------------------------------------------
 
-function newEnquiry() {
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Register Now";
 
-    form.reset();
 
-    form.style.display =
-        'block';
+    // --------------------------------------------------
+    // DELETE CALLBACK
+    // --------------------------------------------------
 
-    successMessage.style.display =
-        'none';
+    delete window[callbackName];
+
+  };
+
+
+  // ====================================================
+  // BUILD PARAMETERS
+  // ====================================================
+
+  const params = new URLSearchParams();
+
+  params.append("action", "registerStudent");
+  params.append("name", name);
+  params.append("mobile", mobile);
+  params.append("education", education);
+  params.append("address", address);
+  params.append("callback", callbackName);
+
+  // ====================================================
+  // BUILD FINAL URL
+  // ====================================================
+
+  const finalURL =
+    GOOGLE_SCRIPT_URL + "?" + params.toString();
+
+
+  // ====================================================
+  // CREATE JSONP SCRIPT
+  // ====================================================
+
+  const script =
+    document.createElement("script");
+
+  script.id = callbackName;
+  script.src = finalURL;
+  script.async = true;
+
+
+  // ====================================================
+  // ERROR HANDLING
+  // ====================================================
+
+  script.onerror = function () {
+
+    console.error(
+      "❌ Google Apps Script connection failed."
+    );
+
+    console.error(
+      "Failed URL:",
+      finalURL
+    );
+
+    alert(
+      "Unable to connect to Google Sheet."
+    );
+
+
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Register Now";
+
+
+    script.remove();
+
+    delete window[callbackName];
+
+  };
+
+
+  // ====================================================
+  // SEND REQUEST
+  // ====================================================
+
+  console.log("🚀 Sending request now...");
+
+  document.body.appendChild(script);
+
+  console.log("✅ JSONP script added to page.");
+
+});
+
+
+// ======================================================
+// NEW REGISTRATION
+// ======================================================
+
+function newRegistration() {
+
+  console.log("🔄 Starting new registration");
+
+  form.reset();
+
+  successMessage.style.display = "none";
+
+  form.style.display = "block";
+
+  submitBtn.disabled = false;
+
+  submitBtn.innerText = "Register Now";
 
 }
