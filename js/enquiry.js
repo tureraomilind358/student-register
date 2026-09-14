@@ -2,7 +2,6 @@ const API_BASE =
     'https://script.google.com/macros/s/AKfycbyHqgeLsqYkqLmi0mzovE1_lFiUjlH0yDOpqmnYoaXDJthLXY1fkgyqucDQiIcUiPgw/exec';
 
 
-
 const form =
     document.getElementById('enquiryForm');
 
@@ -11,7 +10,6 @@ const submitBtn =
 
 const successMessage =
     document.getElementById('successMessage');
-
 
 
 /* =========================
@@ -95,7 +93,6 @@ function callAPI(params) {
 }
 
 
-
 /* =========================
    FORM SUBMIT
 ========================= */
@@ -167,7 +164,6 @@ form.addEventListener(
             ).value.trim();
 
 
-
         /* =========================
            MOBILE VALIDATION
         ========================= */
@@ -197,7 +193,6 @@ form.addEventListener(
         }
 
 
-
         /* =========================
            BUTTON
         ========================= */
@@ -206,7 +201,6 @@ form.addEventListener(
 
         submitBtn.textContent =
             'Submitting...';
-
 
 
         try {
@@ -237,7 +231,6 @@ form.addEventListener(
                     Message: message
 
                 });
-
 
 
             if (
@@ -274,8 +267,6 @@ form.addEventListener(
 
         catch (error) {
 
-            console.error(error);
-
             alert(
                 'Something went wrong. Please try again.'
             );
@@ -293,7 +284,6 @@ form.addEventListener(
 
     }
 );
-
 
 
 /* =========================
